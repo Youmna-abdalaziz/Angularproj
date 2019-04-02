@@ -15,6 +15,8 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { RegestirFormComponent } from './components/regestir-form/regestir-form.component';
+import { InputComponent } from './components/shared/input/input.component';
+import { SubmitComponent } from './components/shared/submit/submit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { RegestirFormComponent } from './components/regestir-form/regestir-form.
     LogoutComponent,
     SingleProductComponent,
     LoginFormComponent,
-    RegestirFormComponent
+    RegestirFormComponent,
+    InputComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserModule,

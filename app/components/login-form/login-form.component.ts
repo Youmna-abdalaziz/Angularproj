@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validator,Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -13,7 +14,9 @@ export class LoginFormComponent implements OnInit {
   })
 
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) {
+  }
+
   login() {
     alert("You Loggedin");
   }

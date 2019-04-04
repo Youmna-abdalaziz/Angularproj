@@ -1,6 +1,10 @@
 <app-navigation-links></app-navigation-links>
 <app-header></app-header>
-
-
+  <ng-container *ngFor="let product of products;">
+      <img src="{{product.imgUrl}}">
+      <h4>{{product.name}}</h4>
+      <h5>{{product.price}}</h5>
+  </ng-container>
+  
 
 <app-footer></app-footer>

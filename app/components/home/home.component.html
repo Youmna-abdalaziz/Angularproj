@@ -2,8 +2,9 @@
 <app-header></app-header>
   <ng-container *ngFor="let product of products;">
       <img src="{{product.imgUrl}}">
-      <h4>{{product.name}}</h4>
-      <h5>{{product.price}}</h5>
+      <h5>{{product.name}}</h5>
+      <h6>{{product.price}}</h6>
+      <button (click)="navigateTo('/singleproduct/',product.product_id)" class="btn-outline-info">Go to Item Page</button>
   </ng-container>
   
 

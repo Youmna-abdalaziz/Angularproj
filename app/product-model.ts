@@ -1,6 +1,6 @@
 export interface ProductModel {
     products:{
-        "product_id":number,     
+        "product_id": string,     
         "imgUrl": string,
         "name": string,
         "price": number}[];

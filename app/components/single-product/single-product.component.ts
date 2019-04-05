@@ -72,6 +72,10 @@ export class SingleProductComponent implements OnInit, ProductModel {
     this.id =this.route.params['value'].id;
   }
 
+  goTo(path: string): void {
+    this.router.navigate([path]);
+  }
+
 
   ngOnInit() {
   }

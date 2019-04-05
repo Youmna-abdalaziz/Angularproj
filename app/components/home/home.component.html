@@ -1,11 +1,15 @@
 <app-navigation-links></app-navigation-links>
 <app-header></app-header>
-  <ng-container *ngFor="let product of products;">
-      <img src="{{product.imgUrl}}">
-      <h5>{{product.name}}</h5>
-      <h6>{{product.price}}</h6>
+<br>
+<br>
+  <div class="card d-inline-block" *ngFor="let product of products">
+      <img class="card-img-top" src="{{product.imgUrl}}">
+      <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <h6 class="card-title">{{product.price}}</h6>
       <button (click)="navigateTo('/singleproduct/',product.product_id)" class="btn-outline-info">Go to Item Page</button>
-  </ng-container>
+     </div>
+  </div>
   
 
 <app-footer></app-footer>

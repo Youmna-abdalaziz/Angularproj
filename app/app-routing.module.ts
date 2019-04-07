@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'footer',component:FooterComponent },
   {path: 'header' ,component:HeaderComponent},
   {path: 'login' ,component:LoginFormComponent},
-  {path: 'regestir' ,component:RegestirFormComponent},
+  {path: 'register' ,component:RegestirFormComponent},
   {path: 'cart' ,component:CartCounterComponent},
   {path: 'wishlist' ,component:WishListCounterComponent},
   {path: 'singleproduct/:id' ,component:SingleProductComponent},

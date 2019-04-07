@@ -18,7 +18,25 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    alert("You Loggedin");
+    
+    console.log(this.loginForm.value);
+    var retrievedUser = localStorage.getItem(this.loginForm.value.userName);
+    if(retrievedUser){
+      var user=JSON.parse(retrievedUser);
+      if(user.password==this.loginForm.value.password){
+        alert("You Loggedin");
+        this.router.navigate(['home']);
+
+      }else{
+        alert("You Entered Incorrect Password");
+        location.reload();
+      }
+    }else{
+      alert("Sorry You are not a Member, please Register first");
+      this.router.navigate(['register']);
+    }
+    
+
   }
 
   ngOnInit() {

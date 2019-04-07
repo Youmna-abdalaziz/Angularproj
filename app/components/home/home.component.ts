@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductModel } from 'src/app/product-model';
+import { ProductService } from 'src/app/product.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, ProductModel {
+export class HomeComponent implements OnInit {
+  private products: ProductModel[];
 
-  public products=
+  /*public products=
      [
       {
         "product_id":"1",
@@ -64,9 +66,9 @@ export class HomeComponent implements OnInit, ProductModel {
         "name":"Scarf4",
         "price":60
       }
-    ]
+    ]*/
   
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute,private productService:ProductService) { }
   goTo(path: string): void {
     this.router.navigate([path]);
   }
@@ -78,6 +80,7 @@ export class HomeComponent implements OnInit, ProductModel {
   }
   
   ngOnInit() {
+    this.products=this.productService.findAll();
   }
 
 }

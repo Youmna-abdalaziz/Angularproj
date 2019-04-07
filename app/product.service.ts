@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductModel } from 'src/app/product-model';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/product.service';
-@Component({
-  selector: 'app-single-product',
-  templateUrl: './single-product.component.html',
-  styleUrls: ['./single-product.component.scss']
+import { Injectable } from '@angular/core';
+import { ProductModel } from './product-model';
+@Injectable({
+  providedIn: 'root'
 })
-export class SingleProductComponent implements OnInit{
-  private product: ProductModel;
-  /*public products=
-     [
+export class ProductService {
+  private products :ProductModel[];
+
+
+  constructor() { 
+    this.products=[
       {
         "product_id":"1",
         "imgUrl": "https://guesseu.scene7.com/is/image/GuessEU/M63H24W7JF0-L302-ALTGHOST?wid=1500&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0",
@@ -65,20 +63,23 @@ export class SingleProductComponent implements OnInit{
         "name":"Scarf4",
         "price":60
       }
-    ]*/
-    public id;
+    ];
+  }
+  findAll(): ProductModel[]{
+    return this.products;
+  }
+  find(id: string) :ProductModel{
+    return this.products[this.getSelectedIndex(id)];
 
-  constructor(private router: Router, private route: ActivatedRoute,private productService:ProductService) { 
-    this.id =this.route.params['value'].id;
   }
 
-  goTo(path: string): void {
-    this.router.navigate([path]);
+  private getSelectedIndex(id:string){
+    for(let i =0;i<this.products.length;i++){
+      if(this.products[i].product_id==id){
+        return i;
+      }
+    }
+    return -1;
   }
-
-
-  ngOnInit() {
-    this.product=this.productService.find(this.id);
-  }
-
 }
+

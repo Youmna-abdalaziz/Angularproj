@@ -24,8 +24,7 @@ export class RegestirFormComponent implements OnInit {
     }
     localStorage.setItem(user.userName,JSON.stringify(user));
     alert("You regestired");
-  //this.stream.setUserName(this.regestirForm.value.firstName);
-  this.router.navigate(['login']);
+    this.router.navigate(['login']);
   }
 
   ngOnInit() {

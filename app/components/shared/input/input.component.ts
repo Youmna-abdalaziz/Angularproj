@@ -8,8 +8,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class InputComponent implements OnInit {
   @Input('type') type: string;
-  @Input('formcontrol') formcontrol: FormControl;
-  @Input ('formcontrolname') formcontrolname : String;
+  @Input('name') name: string;
+  //@Input('formcontrol') formcontrol: FormControl;
+  @Input ('formcontrolname') formcontrolname : FormControl;
   @Input('group') group: FormGroup;
 
   constructor() { }

@@ -1,34 +1,49 @@
-
 <div class="regestir-div">
-<br>
-<h1>Register Form</h1>
-<form class="form-horizontal" [formGroup] = "regestirForm" (ngSubmit)="regestir()">
-  <div class="form-group">
-    <label for="inputusername" class="col-sm-2 control-label">UserName</label>
-    <div class="input-group mb-3">
-      <input type="text" formControlName="userName" name="userName">
-      <!--app-input [type]="'text'" [formcontrol]="userName" [formcontrolname]="'userName'" [group]="'regestirForm'"></app-input-->
+  <br>
+  <h1>Register Form</h1>
+  <form class="form-horizontal" [formGroup]="regestirForm">
+    <div class="form-group">
+      <label for="inputusername" class="col-sm-2 control-label">UserName</label>
+      <div class="input-group mb-3">
+        <!--input type="text" formControlName="userName" name="userName"-->
+        <app-input [type]="'text'" [name]="'userName'" [formcontrolname]="'userName'" [group]="regestirForm">
+        </app-input>
+        <span *ngIf="regestirForm.get('userName').touched && !regestirForm.get('userName').valid">UserName is
+          required</span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-    <div class="input-group mb-3">
-        <input type="email" formControlName="email" name="email">
-      <!--app-input [type]="'email'" [formcontrol]="'email'" [formcontrolname]="'email'" [group]="'regestirForm'"></app-input-->
+    <div class="form-group">
+      <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+      <div class="input-group mb-3">
+        <!--input type="email" formControlName="email" name="email"-->
+        <app-input [type]="'email'" [name]="'email'" [formcontrolname]="'email'" [group]="regestirForm"></app-input>
+        <span
+          *ngIf="regestirForm.get('email').touched && !regestirForm.get('email').valid && regestirForm.controls.email.errors.required">Email
+          is required</span>
+        <span
+          *ngIf="regestirForm.get('email').touched && !regestirForm.get('email').valid &&regestirForm.controls.email.errors.email">Invalid
+          Email</span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-    <div class="input-group mb-3">
-        <input type="password" formControlName="password" name="password">
-      <!--app-input [type]="'password'" [formcontrol]="'password'" [formcontrolname]="'password'" [group]="'regestirForm'"></app-input-->
+    <div class="form-group">
+      <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+      <div class="input-group mb-3">
+        <!--input type="password" formControlName="password" name="password"-->
+        <app-input [type]="'password'" [name]="'password'" [formcontrolname]="'password'" [group]="regestirForm">
+        </app-input>
+        <span
+          *ngIf="regestirForm.get('password').touched && !regestirForm.get('password').valid &&regestirForm.controls.password.errors.required">Password
+          is required</span>
+        <span
+          *ngIf="regestirForm.get('password').touched && !regestirForm.get('password').valid &&regestirForm.controls.password.errors.minlength">Password
+          minlength is 8 characters</span>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Register</button>
-      <!--app-submit (submit)="regestir()" [button]="'Register'"></app-submit-->
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <!--button type="submit" class="btn btn-primary">Register</button-->
+        <app-submit (submit)="regestir()" [button]="'Register'"></app-submit>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 </div>

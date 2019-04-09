@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'register', component: RegestirFormComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'cart/;id', component: CartComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'singleproduct/:id', component: SingleProductComponent },
   { path: '**', component: NotFoundComponent },

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductModel } from 'src/app/product-model';
 import { ProductService } from 'src/app/product.service';
 import { Item } from 'src/app/item-model';
@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
 	private total: number = 0;
 	private totalcount: number = 0;
 
-	constructor(private activatedRoute: ActivatedRoute,
+	constructor(private activatedRoute: ActivatedRoute,private router: Router,
 		private productService: ProductService, private cartS: CartService) { }
 
 	ngOnInit() {
@@ -74,9 +74,11 @@ export class CartComponent implements OnInit {
 			});
 			this.total += item.product.price * item.quantity;
 			this.totalcount += item.quantity;
-			this.cartS.setItems(this.items);
-			this.cartS.setCount(this.totalcount);
+			//this.cartS.setItems(this.items);
+			//this.cartS.setCount(this.totalcount);
 		}
+		this.cartS.setItems(this.items);
+		this.cartS.setCount(this.totalcount);
 	}
 
 	remove(id: string): void {

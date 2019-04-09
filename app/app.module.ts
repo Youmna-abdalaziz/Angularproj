@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ProductService } from 'src/app/product.service';
+import { WishlistService } from 'src/app/wishlist.service';
+import { UserService } from 'src/app/user.service';
+import { CartService } from 'src/app/cart.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -50,7 +53,13 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    ProductService,
+    UserService,
+    WishlistService,
+    CartService,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,6 +19,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { RegestirFormComponent } from './components/regestir-form/regestir-form.component';
 import { InputComponent } from './components/shared/input/input.component';
 import { SubmitComponent } from './components/shared/submit/submit.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { SubmitComponent } from './components/shared/submit/submit.component';
     LoginFormComponent,
     RegestirFormComponent,
     InputComponent,
-    SubmitComponent
+    SubmitComponent,
+    NotFoundComponent,
+    CartComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

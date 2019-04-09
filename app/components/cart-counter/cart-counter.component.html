@@ -1,3 +1,13 @@
-<p>
-  cart-counter works!
-</p>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="cart" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    Cart {{totalcount}}
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+    <span class="dropdown-item" *ngFor="let item of items">
+      <label>{{item.product.name}}: </label>
+      <label>{{item.quantity}}</label>
+      <button (click)="remove(item.product.product_id)" class="btn btn-danger">X</button>
+    </span>
+  </div>
+</li>

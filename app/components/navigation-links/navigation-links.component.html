@@ -1,44 +1,25 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <app-user-name></app-user-name>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <app-user-name></app-user-name>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+        <button (click)="goTo('home')" type="button" class="btn btn-light">Home<span
+            class="sr-only">(current)</span></button>
       </li>
       <li class="nav-item">
-          <!--button (click)="goTo('/login')" class="btn btn-light">Login</button-->
-        <a class="nav-link" href="login">Login</a>
+        <button (click)="goTo('login')" type="button" class="btn btn-light">Login</button>
       </li>
       <li class="nav-item">
-          <!--button (click)="goTo('/regestir')">Regestir</button-->
-        <a class="nav-link" href="register">Register</a>
+        <button (click)="goTo('register')" type="button" class="btn btn-light">Register</button>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="cart" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Cart
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="wishlist" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          WishList
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <app-cart-counter></app-cart-counter>
+      <app-wish-list-counter></app-wish-list-counter>
       <li class="nav-item">
-          <app-logout></app-logout>
+        <app-logout></app-logout>
         <!--a class="nav-link" href="logout">Logout</a-->
       </li>
     </ul>

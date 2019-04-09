@@ -75,7 +75,9 @@ export class SingleProductComponent implements OnInit{
   goTo(path: string): void {
     this.router.navigate([path]);
   }
-
+  navigateTo(path: string,id:string): void {
+    this.router.navigate([path,id]);
+  }
 
   ngOnInit() {
     this.product=this.productService.find(this.id);

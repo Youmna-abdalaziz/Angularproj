@@ -9,8 +9,12 @@ export class NavigationLinksComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute) {
   }
+  goTo(path: string): void {
+    this.router.navigate([path]);
+  }
   
   ngOnInit() {
   }
 
 }
+

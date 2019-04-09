@@ -6,7 +6,7 @@
     <img class="card-img-top" src="{{product.imgUrl}}">
     <div class="card-body">
     <h3 class="card-title">Product Name: {{product.name}}</h3>
-    <h4 class="card-title">Price: {{product.price}}</h4>
+    <h4 class="card-title">Price: {{product.price}} EGP</h4>
     <button (click)="navigateTo('/cart/',{id:product.product_id})" class="btn btn-warning">Add to cart</button>
     <button (click)="navigateTo('/wishlist',{id:product.product_id})" class="btn btn-danger">Add to wishlist</button>   
     </div>

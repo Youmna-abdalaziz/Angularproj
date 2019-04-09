@@ -1,4 +1,4 @@
-<li class="nav-item dropdown">
+<!--li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="cart" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">
     Cart {{totalcount}}
@@ -10,4 +10,15 @@
       <button (click)="remove(item.product.product_id)" class="btn btn-danger">X</button>
     </span>
   </div>
-</li>
+</li-->
+
+
+<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+  <button class="btn btn-light mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Cart {{totalcount}}</button>
+  <div ngbDropdownMenu aria-labelledby="dropdownManual">
+    <span class="dropdown-item" *ngFor="let item of items">
+      <label>{{item.product.name}}: </label>
+      <label>{{item.quantity}}</label>
+      <button (click)="remove(item.product.product_id)" class="btn btn-danger">X</button>
+    </span>
+   </div>

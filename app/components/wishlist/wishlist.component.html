@@ -1,25 +1,31 @@
-<h3>Wishlist Info</h3>
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Photo</th>
-        <th>Price</th>
-        <th>Remove</th>
-    </tr>
-    <tr *ngFor="let item of items">
-        <td>{{item.product_id}}</td>
-        <td>{{item.name}}</td>
-        <td>
-            <img src="{{item.imgUrl}}" width="50">
-        </td>
-        <td>{{item.price}}</td>
-        <td align="center">
-            <button (click)="remove(item.product_id)" class="btn btn-danger">X</button>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="6" align="right">Total Products' count</td>
-        <td>{{totalcount}}</td>
-    </tr>
+<br>
+<h2>Wishlist Info</h2>
+<br>
+<table class="table table-hover" border="3">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.product_id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+                <img src="{{item.imgUrl}}" width="100" height="100">
+            </td>
+            <td>{{item.price}}</td>
+            <td align="center">
+                <button (click)="remove(item.product_id)" class="btn btn-danger">X</button>
+            </td>
+        </tr>
+        <tr class="table-primary">
+            <td colspan="4">Total Products' count</td>
+            <td>{{totalcount}}</td>
+        </tr>
+    </tbody>
 </table>

@@ -2,13 +2,17 @@ img{
     height: 400px;
     width: 400px;
     border: 0.7px solid #ddd;
-    margin-left: 20px;
+    margin-left: 10px;
 
 
 }
 .card-body{
     margin-bottom: 40px;
     text-align: center;
+    border:1px solid #ddd;
+    width: 400px;
+    height: 250px;
+    margin-left: 10px;
 }
 
 button{
@@ -18,3 +22,8 @@ button{
     
 }
 
+.card{
+    width: 600px;
+    height: 600px;
+    border: 8px;
+}

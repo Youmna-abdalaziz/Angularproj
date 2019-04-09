@@ -10,11 +10,17 @@
     </span>
   </div>
 </li-->
-<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
-  <button class="btn btn-light mr-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Wishlist {{totalcount}}</button>
-  <div ngbDropdownMenu aria-labelledby="dropdownManual">
-    <span class="dropdown-item" *ngFor="let item of items">
-      <label>{{item.name}} </label>
-      <button (click)="remove(item.product_id)" class="btn btn-danger">X</button>
-    </span>
-   </div>
+
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-light" id="dropdownBasic1" ngbDropdownToggle>Wishlist {{totalcount}}</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <span class="dropdown-item" *ngFor="let item of items">
+            <label>{{item.name}} </label>
+            <button (click)="remove(item.product_id)" class="btn btn-danger">X</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>

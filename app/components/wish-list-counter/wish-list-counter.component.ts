@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductModel } from 'src/app/product-model';
 import { ProductService } from 'src/app/product.service';
 import { Item } from 'src/app/item-model';
+import { WishlistService } from 'src/app/wishlist.service';
 
 @Component({
   selector: 'app-wish-list-counter',
@@ -12,7 +13,12 @@ export class WishListCounterComponent implements OnInit {
   private items: ProductModel[] = [];
   private totalcount: number=0;
 
-  constructor() { }
+  constructor(private wishlistContents: WishlistService) {
+    this.wishlistContents.getItems().subscribe(res=>
+      this.items=res);
+    this.wishlistContents.getCount().subscribe(res=>
+      this.totalcount=res);
+      }
   loadWishList(): void {
     this.items = [];
     this.totalcount = 0;

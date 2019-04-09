@@ -31,9 +31,7 @@ export class CartComponent implements OnInit {
 					let cart: any = [];
 					cart.push(JSON.stringify(item));
 					localStorage.setItem('cart', JSON.stringify(cart));
-					//let cartItems: any = JSON.parse(localStorage.getItem('cart'));
-					//this.cartS.setItems(cartItems);
-					//this.cartS.setCount(cartItems.length);
+
 
 				} else {
 					let cart: any = JSON.parse(localStorage.getItem('cart'));
@@ -48,17 +46,13 @@ export class CartComponent implements OnInit {
 					if (index == -1) {
 						cart.push(JSON.stringify(item));
 						localStorage.setItem('cart', JSON.stringify(cart));
-						//let cartItems: any = JSON.parse(localStorage.getItem('cart'));
-						//this.cartS.setItems(cartItems);
-						//this.cartS.setCount(cartItems.length);
+
 					} else {
 						let item: Item = JSON.parse(cart[index]);
 						item.quantity += 1;
 						cart[index] = JSON.stringify(item);
 						localStorage.setItem("cart", JSON.stringify(cart));
-						//let cartItems: any = JSON.parse(localStorage.getItem('cart'));
-						//this.cartS.setItems(cartItems);
-						//this.cartS.setCount(cartItems.length);
+
 					}
 				}
 				this.loadCart();
@@ -80,6 +74,8 @@ export class CartComponent implements OnInit {
 			});
 			this.total += item.product.price * item.quantity;
 			this.totalcount += item.quantity;
+			this.cartS.setItems(this.items);
+			this.cartS.setCount(this.totalcount);
 		}
 	}
 
@@ -95,9 +91,6 @@ export class CartComponent implements OnInit {
 					item.quantity -= 1;
 					cart[index] = JSON.stringify(item);
 					localStorage.setItem("cart", JSON.stringify(cart));
-					//let cartItems: any = JSON.parse(localStorage.getItem('cart'));
-					//this.cartS.setItems(cartItems);
-					//this.cartS.setCount(cartItems.length);
 				} else {
 					cart.splice(i, 1);
 					break;
@@ -105,9 +98,6 @@ export class CartComponent implements OnInit {
 			}
 		}
 		localStorage.setItem("cart", JSON.stringify(cart));
-		//let cartItems: any = JSON.parse(localStorage.getItem('cart'));
-		//this.cartS.setItems(cartItems);
-		//this.cartS.setCount(cartItems.length);
 		this.loadCart();
 	}
 

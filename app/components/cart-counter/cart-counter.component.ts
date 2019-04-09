@@ -14,7 +14,13 @@ export class CartCounterComponent implements OnInit {
   private items: Item[] = [];
   private totalcount: number=0;
 
-  constructor() {   }
+  constructor(private cartContents: CartService) {
+    this.cartContents.getItems().subscribe(res=>
+      this.items=res);
+    this.cartContents.getCount().subscribe(res=>
+      this.totalcount=res);
+      }
+
   loadCart(): void {
     this.items = [];
     this.totalcount=0;

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
-import { Item } from 'src/app/item-model';
 import { ProductModel } from 'src/app/product-model';
+import { WishlistService } from 'src/app/wishlist.service';
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
@@ -13,7 +13,7 @@ export class WishlistComponent implements OnInit {
   private totalcount: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private productService: ProductService) { }
+    private productService: ProductService,private wishS: WishlistService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -56,6 +56,8 @@ export class WishlistComponent implements OnInit {
       this.items.push(item);
     }
     this.totalcount =wishlist.length;
+    this.wishS.setItems(this.items);
+		this.wishS.setCount(this.totalcount);
   }
   remove(id: string): void {
     let wishlist: any = JSON.parse(localStorage.getItem('wishlist'));

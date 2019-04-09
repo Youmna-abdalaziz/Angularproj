@@ -7,6 +7,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'angproj';
-  constructor(private router: Router) {}
-  
+  constructor(private router: Router) { }
+
 }

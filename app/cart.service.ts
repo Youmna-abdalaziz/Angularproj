@@ -6,21 +6,21 @@ import { Item } from 'src/app/item-model';
   providedIn: 'root'
 })
 export class CartService {
-  items: BehaviorSubject <Item[]> = new BehaviorSubject([]);
-  totalcount: BehaviorSubject <number> = new BehaviorSubject(0);
+  items: BehaviorSubject<Item[]> = new BehaviorSubject([]);
+  totalcount: BehaviorSubject<number> = new BehaviorSubject(0);
 
 
   constructor() { }
-  setItems(val:Item[]):void{
+  setItems(val: Item[]): void {
     this.items.next(val);
   }
-  setCount(val:number):void{
+  setCount(val: number): void {
     this.totalcount.next(val);
   }
-  getItems(){
+  getItems() {
     return this.items.asObservable();
   }
-  getCount(){
+  getCount() {
     return this.totalcount.asObservable();
   }
 }

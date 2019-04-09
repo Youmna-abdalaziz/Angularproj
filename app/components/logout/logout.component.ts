@@ -8,8 +8,8 @@ import { UserService } from 'src/app/user.service';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private router: Router,private user: UserService) { }
-  logout(){
+  constructor(private router: Router, private user: UserService) { }
+  logout() {
     localStorage.removeItem('currentUser');
     this.user.setName('Guest');
     this.router.navigate(['/login']);

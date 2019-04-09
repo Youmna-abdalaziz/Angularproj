@@ -8,7 +8,7 @@ import { RegestirFormComponent } from './components/regestir-form/regestir-form.
 import { CartCounterComponent } from './components/cart-counter/cart-counter.component';
 import { WishListCounterComponent } from './components/wish-list-counter/wish-list-counter.component';
 import { SingleProductComponent } from './components/single-product/single-product.component';
-import {NotFoundComponent} from './components/not-found/not-found.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 const routes: Routes = [

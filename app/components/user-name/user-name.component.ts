@@ -8,21 +8,21 @@ import { UserService } from 'src/app/user.service';
 export class UserNameComponent implements OnInit {
   private userName: string;
 
-  constructor(private user: UserService) { 
-    this.user.getName().subscribe(res=>{
-      var currentUser=localStorage.getItem("currentUser");
-      if(currentUser){
-        var user=JSON.parse(currentUser);
+  constructor(private user: UserService) {
+    this.user.getName().subscribe(res => {
+      var currentUser = localStorage.getItem("currentUser");
+      if (currentUser) {
+        var user = JSON.parse(currentUser);
         console.log(user);
         console.log(currentUser);
       }
-      if(res=="Guest"&&user){
-        this.userName=user;
-      }else{
-        this.userName=res;
+      if (res == "Guest" && user) {
+        this.userName = user;
+      } else {
+        this.userName = res;
       }
-  });
-}
+    });
+  }
   ngOnInit() {
   }
 

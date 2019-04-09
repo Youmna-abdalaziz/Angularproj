@@ -5,12 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  userName: BehaviorSubject <string> = new BehaviorSubject('Guest');
+  userName: BehaviorSubject<string> = new BehaviorSubject('Guest');
   constructor() { }
-  setName(val:string):void{
+  setName(val: string): void {
     this.userName.next(val);
   }
-  getName(){
+  getName() {
     return this.userName.asObservable();
   }
 }

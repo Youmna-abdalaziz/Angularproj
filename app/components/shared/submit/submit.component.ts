@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submit',
@@ -6,10 +6,10 @@ import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';
   styleUrls: ['./submit.component.scss']
 })
 export class SubmitComponent implements OnInit {
-  @Output()submit:EventEmitter<any>=new EventEmitter();
+  @Output() submit: EventEmitter<any> = new EventEmitter();
   @Input('button') button: string;
   constructor() { }
-  clicked(){
+  clicked() {
     this.submit.emit();
   }
 

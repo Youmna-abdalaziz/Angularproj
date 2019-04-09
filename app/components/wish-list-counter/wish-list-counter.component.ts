@@ -11,14 +11,14 @@ import { WishlistService } from 'src/app/wishlist.service';
 })
 export class WishListCounterComponent implements OnInit {
   private items: ProductModel[] = [];
-  private totalcount: number=0;
+  private totalcount: number = 0;
 
   constructor(private wishlistContents: WishlistService) {
-    this.wishlistContents.getItems().subscribe(res=>
-      this.items=res);
-    this.wishlistContents.getCount().subscribe(res=>
-      this.totalcount=res);
-      }
+    this.wishlistContents.getItems().subscribe(res =>
+      this.items = res);
+    this.wishlistContents.getCount().subscribe(res =>
+      this.totalcount = res);
+  }
   loadWishList(): void {
     this.items = [];
     this.totalcount = 0;
@@ -27,7 +27,7 @@ export class WishListCounterComponent implements OnInit {
       let item = JSON.parse(wishlist[i]);
       this.items.push(item);
     }
-    this.totalcount =wishlist.length;
+    this.totalcount = wishlist.length;
   }
   remove(id: string): void {
     let wishlist: any = JSON.parse(localStorage.getItem('wishlist'));

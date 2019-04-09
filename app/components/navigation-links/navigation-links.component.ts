@@ -12,7 +12,7 @@ export class NavigationLinksComponent implements OnInit {
   goTo(path: string): void {
     this.router.navigate([path]);
   }
-  
+
   ngOnInit() {
   }
 

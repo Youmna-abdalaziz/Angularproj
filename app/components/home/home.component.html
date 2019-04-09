@@ -7,6 +7,7 @@
     <h5 class="card-title">{{product.name}}</h5>
     <h6 class="card-title">{{product.price}} EGP</h6>
     <button (click)="navigateTo('/singleproduct/',product.product_id)" class="btn btn-info">Go to Item Page</button>
+    <br>
     <button (click)="navigateTo('/cart/',{id:product.product_id})" class="btn btn-warning">Add to cart</button>
     <button (click)="navigateTo('/wishlist',{id:product.product_id})" class="btn btn-danger">Add to wishlist</button>
   </div>

@@ -20,7 +20,7 @@ export class NavigationLinksComponent implements OnInit {
     }
     if (localStorage.getItem('cart') == null) {
       let cart: any = [];
-      localStorage.setItem('wishlist', JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(cart));
     }
   }
 }

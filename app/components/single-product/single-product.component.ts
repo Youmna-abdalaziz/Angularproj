@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductModel } from 'src/app/product-model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
@@ -8,22 +8,13 @@ import { ProductService } from 'src/app/product.service';
   styleUrls: ['./single-product.component.scss']
 })
 export class SingleProductComponent implements OnInit {
-  private product: ProductModel;
-  public id;
+  @Input('product') product: ProductModel;
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
-  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) {
-    this.id = this.route.params['value'].id;
-  }
-
-  goTo(path: string): void {
-    this.router.navigate([path]);
-  }
   navigateTo(path: string, id: string): void {
     this.router.navigate([path, id]);
   }
-
   ngOnInit() {
-    this.product = this.productService.find(this.id);
   }
 
 }

@@ -11,17 +11,18 @@ import { SingleProductComponent } from './components/single-product/single-produ
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import {ProductdetailsComponent} from './components/productdetails/productdetails.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'header', component: HeaderComponent },
+  //{ path: 'footer', component: FooterComponent },
+  //{ path: 'header', component: HeaderComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'register', component: RegestirFormComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'cart/;id', component: CartComponent },
+  //{ path: 'cart/;id', component: CartComponent },
   { path: 'wishlist', component: WishlistComponent },
-  { path: 'singleproduct/:id', component: SingleProductComponent },
+  { path: 'productdetails/:id', component: ProductdetailsComponent },
   { path: '**', component: NotFoundComponent },
 
 

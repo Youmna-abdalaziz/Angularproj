@@ -1,18 +1,24 @@
 <app-header></app-header>
 <br>
 <br>
-<div class="card d-inline-block col-4" *ngFor="let product of products">
+<div>
+  <app-single-product *ngFor="let product of products" [product]="product" ></app-single-product>
+</div>
+
+<app-footer></app-footer>
+
+<!--div class="card d-inline-block col-4" *ngFor="let product of products">
   <img class="card-img-top" src="{{product.imgUrl}}">
   <div class="card-body">
     <h5 class="card-title">{{product.name}}</h5>
     <h6 class="card-title">{{product.price}} EGP</h6>
-    <button (click)="navigateTo('/singleproduct/',product.product_id)" class="btn btn-info">Go to Item Page</button>
+    <button (click)="navigateTo('/productdetails/',product.product_id)" class="btn btn-info">Go to Item Page</button>
     <br>
     <button (click)="navigateTo('/cart/',{id:product.product_id})" class="btn btn-warning">Add to cart</button>
     <button (click)="navigateTo('/wishlist',{id:product.product_id})" class="btn btn-danger">Add to wishlist</button>
   </div>
   <br>
-</div>
+</div-->
 
 
-<app-footer></app-footer>
+

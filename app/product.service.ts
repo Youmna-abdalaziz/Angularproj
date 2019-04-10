@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductModel } from './product-model';
+import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +9,7 @@ export class ProductService {
   private products: ProductModel[];
 
 
-  constructor() {
+  constructor(private router: Router) {
     this.products = [
       {
         "product_id": "1",
@@ -77,6 +79,9 @@ export class ProductService {
     for (let i = 0; i < this.products.length; i++) {
       if (this.products[i].product_id == id) {
         return i;
+      }
+      else{
+        this.router.navigate(['notfound'])
       }
     }
     return -1;

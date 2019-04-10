@@ -25,6 +25,7 @@ import { SubmitComponent } from './components/shared/submit/submit.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     SubmitComponent,
     NotFoundComponent,
     CartComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductdetailsComponent
   ],
   imports: [
     BrowserModule,

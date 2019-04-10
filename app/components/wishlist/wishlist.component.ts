@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
 import { ProductModel } from 'src/app/product-model';
 import { WishlistService } from 'src/app/wishlist.service';
@@ -12,7 +12,7 @@ export class WishlistComponent implements OnInit {
   private items: ProductModel[] = [];
   private totalcount: number = 0;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,private router:Router,
     private productService: ProductService, private wishS: WishlistService) { }
 
   ngOnInit() {
@@ -20,6 +20,9 @@ export class WishlistComponent implements OnInit {
       var id = params['id'];
       if (id) {
         var item: ProductModel = this.productService.find(id);
+        if(!item){
+          return this.router.navigate(['notfound']);
+        }
         if (localStorage.getItem('wishlist') == null) {
           let wishlist: any = [];
           wishlist.push(JSON.stringify(item));

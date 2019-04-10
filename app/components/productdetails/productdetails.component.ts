@@ -26,6 +26,9 @@ export class ProductdetailsComponent implements OnInit {
 
   ngOnInit() {
     this.product = this.productService.find(this.id);
+    if(!this.product){
+      this.router.navigate(['notfound']);
+    }
   }
 
 }

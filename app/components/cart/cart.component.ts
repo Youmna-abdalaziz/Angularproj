@@ -27,6 +27,9 @@ export class CartComponent implements OnInit {
 					product: this.productService.find(id),
 					quantity: 1
 				};
+				if(!item.product){
+					return this.router.navigate(['notfound']);
+				  }
 				if (localStorage.getItem('cart') == null) {
 					let cart: any = [];
 					cart.push(JSON.stringify(item));

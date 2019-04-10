@@ -14,6 +14,10 @@ export class NavigationLinksComponent implements OnInit {
   }
 
   ngOnInit() {
+    let cart: any = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    let wishlist: any = [];
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }
 
 }

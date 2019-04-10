@@ -80,9 +80,6 @@ export class ProductService {
       if (this.products[i].product_id == id) {
         return i;
       }
-      else{
-        this.router.navigate(['notfound'])
-      }
     }
     return -1;
   }

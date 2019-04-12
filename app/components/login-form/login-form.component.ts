@@ -32,7 +32,8 @@ export class LoginFormComponent implements OnInit {
         localStorage.setItem("currentUser", JSON.stringify(this.loginForm.value.userName));
       } else {
         alert("You Entered Incorrect Password");
-        location.reload();
+        //location.reload();
+        this.loginForm.reset();
       }
     } else {
       alert("Sorry You are not a Member, please Register first");

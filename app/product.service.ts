@@ -71,6 +71,7 @@ export class ProductService {
     return this.products;
   }
   find(id: string): ProductModel {
+  
     return this.products[this.getSelectedIndex(id)];
 
   }
